@@ -1,18 +1,18 @@
-package selenium.tests.WatchListTest;
+package main.java;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
-import Properties.WatchListTestProperties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class ChromeTest {
+import main.properties.WatchListTestProperties;
+
+
+public class WatchlistTest  {
 	
 	private static WebDriver driver = null;
 	private static String webTitle="";
@@ -29,7 +29,10 @@ public class ChromeTest {
 	private static boolean isAllShowsInList = true;
 	private static String webUrl="";
 	
-	public static void main(String[] args) throws InterruptedException {
+	public WatchlistTest(WebDriver driver) throws InterruptedException {
+		
+		//set the external driver
+		this.driver = driver;
 		
 		//generate new properties to test and set them to local properties
 		watchListTestProperties = new WatchListTestProperties();
@@ -37,7 +40,7 @@ public class ChromeTest {
 		rating = watchListTestProperties.getRating();
 		ListOfRatedShows = new ArrayList<String>();
 		
-		//settings for chrome driver and open the website
+		//settings driver and open the website
 		SetDriverAndOpenWebsite();
 			
 		//check the title of the web
@@ -55,7 +58,7 @@ public class ChromeTest {
 		
 		 driver.close();
 		 driver.quit();
-
+		
 	}
 	
 	private static void AddShowsToWatchListByRating() throws InterruptedException {
@@ -185,10 +188,8 @@ public class ChromeTest {
 	}
 
 	private static void SetDriverAndOpenWebsite() {
+
 		
-		String projectLocation = System.getProperty("user.dir");
-		System.setProperty("webdriver.chrome.driver", projectLocation+"\\lib\\Drivers\\ChromeDriver\\chromedriver.exe");
-		driver = new ChromeDriver();
 		System.out.println("Creating new server");
 		//max time of waiting to browser to show up
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -196,4 +197,6 @@ public class ChromeTest {
 		System.out.println("Navigate to the web");
 		driver.manage().window().maximize();
 	}
+	
+
 }

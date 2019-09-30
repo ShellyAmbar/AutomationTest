@@ -1,4 +1,4 @@
-package Properties;
+package main.properties;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -26,7 +26,7 @@ public class WatchListTestProperties {
 	private void SetlistOfShows() {
 		String projectLocation = System.getProperty("user.dir");
 		listOfShows = new ArrayList<String>();
-		try(BufferedReader in = new BufferedReader(new FileReader(projectLocation+"\\src\\Properties\\text.txt"))) {
+		try(BufferedReader in = new BufferedReader(new FileReader(projectLocation+"\\src\\main\\properties\\text.txt"))) {
 		    String str;
 		    while ((str = in.readLine()) != null) {
 		    	if(!str.contains("ratings")) {

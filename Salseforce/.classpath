@@ -4,5 +4,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/Users/ambar/Downloads/selenium-server-standalone-3.9.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ambar/Downloads/selenium-server-3.9.1.zip"/>
+	<classpathentry kind="lib" path="lib/Junit/junit-4.10-src.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
