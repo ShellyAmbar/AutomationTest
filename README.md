@@ -1,5 +1,5 @@
 # AutomationTest
-An Automation test using Junit for testing 3 cases : 
+An Automation test using Junit with java on Eclipse for testing 3 cases on the IMDB website : 
 case 1 - run the program on Chrom browser
 case 2 - run the program on Edge browser
 case 3 - run the program on Firefox browser
